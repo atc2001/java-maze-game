@@ -1,5 +1,3 @@
-package main.java;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,8 +15,7 @@ public class IntroController {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("main-menu.fxml"));
 
-            Stage stage = (Stage) usernameTextField.getScene().getWindow();
-            stage.setScene(new Scene(root));
+            Main.stage.setScene(new Scene(root));
 
         } catch (IOException e) {
             e.printStackTrace();
