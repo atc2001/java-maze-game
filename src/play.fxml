@@ -25,7 +25,7 @@
             <Font size="32.0" />
          </font>
       </Label>
-      <ComboBox prefWidth="150.0" promptText="Select Algorithm..." GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="2" />
+      <ComboBox fx:id="selectAlgorithmComboBox" prefWidth="150.0" promptText="Select Algorithm..." GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="2" />
       <Button minWidth="150.0" mnemonicParsing="false" text="Generate Maze" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.rowSpan="2" />
       <Button fx:id="backButton" minWidth="25.0" mnemonicParsing="false" onAction="#onClickBackButton" text="Back" GridPane.valignment="TOP" />
       <Button fx:id="exitButton" minWidth="25.0" mnemonicParsing="false" onAction="#onClickExitButton" text="Exit" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.valignment="TOP" />

@@ -1,13 +1,25 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.io.IOException;
 
 public class SettingsController {
+    public ComboBox<String> themeComboBox;
+    public ComboBox<String> resolutionComboBox;
+
+    @FXML
+    public void initialize() {
+        themeComboBox.setItems(FXCollections.observableArrayList("Light", "Dark"));
+        resolutionComboBox.setItems(FXCollections.observableArrayList("1920x1080", "1280x720"));
+    }
 
     public void onClickSaveLocationButton(ActionEvent actionEvent) {
 
