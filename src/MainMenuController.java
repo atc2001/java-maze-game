@@ -25,4 +25,17 @@ public class MainMenuController {
         }
 
     }
+
+    public void onClickPlayButton(ActionEvent actionEvent) {
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("play.fxml"));
+
+            Main.stage.setScene(new Scene(root));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

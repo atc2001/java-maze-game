@@ -23,7 +23,7 @@
             <Font size="32.0" />
          </font>
       </Label>
-      <Button minWidth="80.0" mnemonicParsing="false" text="Play" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      <Button fx:id="playButton" minWidth="80.0" mnemonicParsing="false" onAction="#onClickPlayButton" text="Play" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
       <Button fx:id="settingsButton" minWidth="80.0" mnemonicParsing="false" onAction="#onClickSettingsButton" text="Settings" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
       <Button fx:id="exitButton" minWidth="80.0" mnemonicParsing="false" onAction="#onClickExitButton" text="Exit" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
       <CheckBox disable="true" mnemonicParsing="false" text="Mute" textFill="WHITE" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
