@@ -48,23 +48,18 @@ public class PlayController {
             }
         }
 
-        UnweightedGraph<Vertex> graph = new SimpleGraph<>();
+        UnweightedGraph<Vertex> graph = new UndirectedUnweightedGraph<>();
 
         for (Vertex vertex : vertices) {
             graph.addVertex(vertex);
         }
 
-        for (Vertex origin : graph.vertices()) {
-            List<Vertex> destinations;
-            destinations = graph.vertices().stream().filter(vertex -> vertex.x == origin.x + 1 || vertex.y == origin.y + 1).collect(Collectors.toList());
+        for (Vertex origin : vertices) {
+            List<Vertex> destinations = vertices.stream().filter(origin::isAdjacent).collect(Collectors.toList());
 
             for (Vertex destination : destinations) {
                 graph.addEdge(origin, destination);
             }
         }
-
-
-
-
     }
 }
