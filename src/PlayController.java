@@ -7,6 +7,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class PlayController {
     public ComboBox<String> selectAlgorithmComboBox;
@@ -26,10 +29,42 @@ public class PlayController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-
     public void onClickExitButton(ActionEvent actionEvent) {
         System.exit(0);
+    }
+
+
+    /**
+     * Generate a maze.
+     * @param actionEvent
+     */
+    public void onClickGenerateButton(ActionEvent actionEvent) {
+
+        List<Vertex> vertices = new ArrayList<>();
+        for (int x = 0; x < 5; x++) {
+            for (int y = 0; y < 5; y++) {
+                vertices.add(new Vertex(x, y));
+            }
+        }
+
+        UnweightedGraph<Vertex> graph = new SimpleGraph<>();
+
+        for (Vertex vertex : vertices) {
+            graph.addVertex(vertex);
+        }
+
+        for (Vertex origin : graph.vertices()) {
+            List<Vertex> destinations;
+            destinations = graph.vertices().stream().filter(vertex -> vertex.x == origin.x + 1 || vertex.y == origin.y + 1).collect(Collectors.toList());
+
+            for (Vertex destination : destinations) {
+                graph.addEdge(origin, destination);
+            }
+        }
+
+
+
+
     }
 }
