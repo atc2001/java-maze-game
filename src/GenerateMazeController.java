@@ -64,7 +64,7 @@ public class GenerateMazeController {
             }
         }
 
-        Algorithm<Vertex> algorithm = new KruskalsAlgorithm<>(graph);
+        Algorithm<Vertex> algorithm = new PrimsAlgorithm<>(graph);
 
         ServiceLocator.mazeService.setMaze(algorithm.generateMaze());
 
