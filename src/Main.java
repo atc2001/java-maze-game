@@ -6,7 +6,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         ServiceLocator.navigationService = new NavigationService(primaryStage);
-        ServiceLocator.navigationService.navigate("generate-maze.fxml");
+        ServiceLocator.navigationService.navigate("main-menu.fxml");
 
         ServiceLocator.mazeService = new MazeService();
 

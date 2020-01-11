@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.lang.System.nanoTime;
+
 public class GenerateMazeController {
     public ComboBox<String> selectAlgorithmComboBox;
     public TextField widthTextField;
@@ -82,7 +84,15 @@ public class GenerateMazeController {
 
         }
 
-        ServiceLocator.mazeService.setMaze(algorithm.generateMaze());
+        long startTime = nanoTime();
+
+        Graph<Vertex> maze = algorithm.generateMaze();
+
+        long endTime = nanoTime();
+
+        System.out.println("Time Taken: " + (endTime - startTime) + " nanoseconds");
+
+        ServiceLocator.mazeService.setMaze(maze);
 
         try {
             Parent root = FXMLLoader.load(getClass().getResource("solve-maze.fxml"));

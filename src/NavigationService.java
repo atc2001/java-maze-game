@@ -22,7 +22,7 @@ public class NavigationService {
         Parent root = FXMLLoader.load(getClass().getResource(view));
 
         stage.hide();
-        stage.setTitle("Hello World");
+        stage.setTitle("Maze Game");
         stage.setScene(new Scene(root));
         stage.setMaximized(true);
         stage.show();
