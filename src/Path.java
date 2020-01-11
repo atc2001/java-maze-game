@@ -1,6 +1,6 @@
 import java.util.Set;
 
-public interface Path<V> {
+public interface Path<V> extends Iterable<V> {
 
     V getOrigin();
 

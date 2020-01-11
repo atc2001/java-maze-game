@@ -12,9 +12,7 @@ public class IntroController {
     public void onClickEnterButton(ActionEvent actionEvent) {
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("main-menu.fxml"));
-
-            Main.stage.setScene(new Scene(root));
+            ServiceLocator.navigationService.navigate("main-menu.fxml");
 
         } catch (IOException e) {
             e.printStackTrace();

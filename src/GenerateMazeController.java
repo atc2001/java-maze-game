@@ -5,14 +5,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class PlayController {
+public class GenerateMazeController {
     public ComboBox<String> selectAlgorithmComboBox;
+    public TextField widthTextField;
+    public TextField heightTextField;
 
     @FXML
     public void initialize() {
@@ -22,9 +26,7 @@ public class PlayController {
     public void onClickBackButton(ActionEvent actionEvent) {
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("main-menu.fxml"));
-
-            Main.stage.setScene(new Scene(root));
+            ServiceLocator.navigationService.navigate("main-menu.fxml");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -42,8 +44,8 @@ public class PlayController {
     public void onClickGenerateButton(ActionEvent actionEvent) {
 
         List<Vertex> vertices = new ArrayList<>();
-        for (int x = 0; x < 5; x++) {
-            for (int y = 0; y < 5; y++) {
+        for (int x = 0; x < Integer.parseInt(widthTextField.getText()); x++) {
+            for (int y = 0; y < Integer.parseInt(heightTextField.getText()); y++) {
                 vertices.add(new Vertex(x, y));
             }
         }
@@ -64,7 +66,17 @@ public class PlayController {
 
         Algorithm<Vertex> algorithm = new RecursiveBacktrackingAlgorithm<>(graph);
 
-        algorithm.generateMaze();
+        ServiceLocator.mazeService.setMaze(algorithm.generateMaze());
 
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("solve-maze.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Maze");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -2,7 +2,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -16,9 +15,7 @@ public class MainMenuController {
     public void onClickSettingsButton(ActionEvent actionEvent) {
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("settings.fxml"));
-
-            Main.stage.setScene(new Scene(root));
+            ServiceLocator.navigationService.navigate("settings.fxml");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -29,9 +26,7 @@ public class MainMenuController {
     public void onClickPlayButton(ActionEvent actionEvent) {
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("play.fxml"));
-
-            Main.stage.setScene(new Scene(root));
+            ServiceLocator.navigationService.navigate("generate-maze.fxml");
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SolveMazeController">
+   <children>
+      <Canvas fx:id="mazeCanvas" height="200.0" width="200.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

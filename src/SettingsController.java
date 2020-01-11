@@ -26,7 +26,7 @@ public class SettingsController {
         FileChooser chooser = new FileChooser();
         FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("JPG & GIF Images", "jpg", "gif");
         chooser.setSelectedExtensionFilter(filter);
-        File file = chooser.showOpenDialog(Main.stage);
+        File file = chooser.showOpenDialog(ServiceLocator.navigationService.getStage());
         if (file != null) {
             System.out.println("You chose to open this file: " + file.getName());
 
@@ -36,9 +36,7 @@ public class SettingsController {
     public void onClickBackButton(ActionEvent actionEvent) {
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("main-menu.fxml"));
-
-            Main.stage.setScene(new Scene(root));
+            ServiceLocator.navigationService.navigate("main-menu.fxml");
 
         } catch (IOException e) {
             e.printStackTrace();
