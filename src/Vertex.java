@@ -5,6 +5,8 @@ public class Vertex {
     private final int x;
     private final int y;
 
+    public boolean isVisited;
+
     public Vertex(int x, int y) {
         this.x = x;
         this.y = y;
@@ -40,6 +42,6 @@ public class Vertex {
     }
 
     public boolean isAdjacent(Vertex other) {
-        return (x == other.x + 1 && y == other.y) || (x == other.x && y == other.y + 1);
+        return (x + 1 == other.x && y == other.y) || (x == other.x && y  + 1 == other.y) || (x - 1 == other.x && y == other.y) || (x == other.x && y  - 1 == other.y);
     }
 }

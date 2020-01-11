@@ -61,5 +61,10 @@ public class PlayController {
                 graph.addEdge(origin, destination);
             }
         }
+
+        Algorithm<Vertex> algorithm = new RecursiveBacktrackingAlgorithm<>(graph);
+
+        algorithm.generateMaze();
+
     }
 }

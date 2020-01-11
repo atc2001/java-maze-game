@@ -6,4 +6,8 @@ public interface Graph<V> {
 
     void addVertex(V vertex);
 
+    Set<V> getAdjacentVertices(V vertex);
+
+    boolean containsVertex(V vertex);
+
 }

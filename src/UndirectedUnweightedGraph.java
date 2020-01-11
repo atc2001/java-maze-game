@@ -19,6 +19,16 @@ public class UndirectedUnweightedGraph<V> implements UnweightedGraph<V> {
     }
 
     @Override
+    public Set<V> getAdjacentVertices(V vertex) {
+        return vertices.get(vertex);
+    }
+
+    @Override
+    public boolean containsVertex(V vertex) {
+        return vertices.containsKey(vertex);
+    }
+
+    @Override
     public void addEdge(V origin, V destination) {
         vertices.get(origin).add(destination);
         vertices.get(destination).add(origin);
