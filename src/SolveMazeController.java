@@ -12,7 +12,7 @@ public class SolveMazeController {
 
     public void initialize() {
 
-        int scale = 100;
+        int scale = 10;
 
         Graph<Vertex> maze = ServiceLocator.mazeService.getMaze();
 

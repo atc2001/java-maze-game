@@ -20,7 +20,7 @@ public class GenerateMazeController {
 
     @FXML
     public void initialize() {
-        selectAlgorithmComboBox.setItems(FXCollections.observableArrayList("Recursive Backtracking", "Wilson's Algorithm", "Growing Tree"));
+        selectAlgorithmComboBox.setItems(FXCollections.observableArrayList(AlgorithmConstant.recursiveBacktracking, AlgorithmConstant.kruskals, AlgorithmConstant.prims));
     }
 
     public void onClickBackButton(ActionEvent actionEvent) {
@@ -41,7 +41,7 @@ public class GenerateMazeController {
      * Generate a maze.
      * @param actionEvent
      */
-    public void onClickGenerateButton(ActionEvent actionEvent) {
+    public void onClickGenerateButton(ActionEvent actionEvent) throws Exception {
 
         List<Vertex> vertices = new ArrayList<>();
         for (int x = 0; x < Integer.parseInt(widthTextField.getText()); x++) {
@@ -64,7 +64,23 @@ public class GenerateMazeController {
             }
         }
 
-        Algorithm<Vertex> algorithm = new PrimsAlgorithm<>(graph);
+        Algorithm<Vertex> algorithm;
+
+        switch (selectAlgorithmComboBox.getValue()) {
+
+            case AlgorithmConstant.recursiveBacktracking:
+                algorithm = new RecursiveBacktrackingAlgorithm<>(graph);
+                break;
+            case AlgorithmConstant.kruskals:
+                algorithm = new KruskalsAlgorithm<>(graph);
+                break;
+            case AlgorithmConstant.prims:
+                algorithm = new PrimsAlgorithm<>(graph);
+                break;
+            default:
+                throw new Exception("The selected algorithm was not recognised.");
+
+        }
 
         ServiceLocator.mazeService.setMaze(algorithm.generateMaze());
 
