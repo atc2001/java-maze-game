@@ -40,6 +40,20 @@ public class UndirectedUnweightedGraph<V> implements UnweightedGraph<V> {
     }
 
     @Override
+    public Set<EndpointPair<V>> getEndpointPairs() {
+        Set<EndpointPair<V>> endpointPairs = new HashSet<>();
+
+        for (V vertex : vertices.keySet()) {
+            for (V adjacentVertex : getAdjacentVertices(vertex)) {
+                endpointPairs.add(new UndirectedUnweightedEndpointPair<>(vertex, adjacentVertex));
+            }
+        }
+
+        return endpointPairs;
+
+    }
+
+    @Override
     public void addEdge(V origin, V destination) {
         vertices.get(origin).add(destination);
         vertices.get(destination).add(origin);

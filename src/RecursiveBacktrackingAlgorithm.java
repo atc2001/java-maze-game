@@ -1,13 +1,10 @@
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class RecursiveBacktrackingAlgorithm<V> implements Algorithm<V> {
 
-    private Graph<V> graph;
+    private final Graph<V> graph;
 
-    private UnweightedGraph<V> maze;
-
-    private Stack<V> vertices;
+    private final UnweightedGraph<V> maze;
 
     public RecursiveBacktrackingAlgorithm(Graph<V> graph) {
         this.graph = graph;

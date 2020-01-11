@@ -64,7 +64,7 @@ public class GenerateMazeController {
             }
         }
 
-        Algorithm<Vertex> algorithm = new RecursiveBacktrackingAlgorithm<>(graph);
+        Algorithm<Vertex> algorithm = new KruskalsAlgorithm<>(graph);
 
         ServiceLocator.mazeService.setMaze(algorithm.generateMaze());
 

@@ -12,4 +12,5 @@ public interface Graph<V> {
 
     V getRandomVertex();
 
+    Set<EndpointPair<V>> getEndpointPairs();
 }
