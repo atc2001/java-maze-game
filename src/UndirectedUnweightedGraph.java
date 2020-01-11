@@ -29,6 +29,17 @@ public class UndirectedUnweightedGraph<V> implements UnweightedGraph<V> {
     }
 
     @Override
+    public V getRandomVertex() {
+        List<V> list = new ArrayList<>(vertices.keySet());
+
+        Collections.shuffle(list);
+
+        int index = new Random().nextInt(list.size());
+
+        return list.get(index);
+    }
+
+    @Override
     public void addEdge(V origin, V destination) {
         vertices.get(origin).add(destination);
         vertices.get(destination).add(origin);

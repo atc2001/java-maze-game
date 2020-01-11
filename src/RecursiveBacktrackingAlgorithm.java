@@ -1,5 +1,4 @@
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class RecursiveBacktrackingAlgorithm<V> implements Algorithm<V> {
@@ -19,7 +18,7 @@ public class RecursiveBacktrackingAlgorithm<V> implements Algorithm<V> {
     @Override
     public Graph<V> generateMaze() {
 
-        V origin = graph.getVertices().iterator().next();
+        V origin = graph.getRandomVertex();
 
         generateMazeRecursively(origin);
 
@@ -31,7 +30,9 @@ public class RecursiveBacktrackingAlgorithm<V> implements Algorithm<V> {
 
         maze.addVertex(vertex);
 
-        Set<V> adjacentVertices = graph.getAdjacentVertices(vertex);
+        List<V> adjacentVertices = new ArrayList<>(graph.getAdjacentVertices(vertex));
+
+        Collections.shuffle(adjacentVertices);
 
         for (V adjacentVertex : adjacentVertices) {
 

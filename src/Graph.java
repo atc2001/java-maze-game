@@ -10,4 +10,6 @@ public interface Graph<V> {
 
     boolean containsVertex(V vertex);
 
+    V getRandomVertex();
+
 }
