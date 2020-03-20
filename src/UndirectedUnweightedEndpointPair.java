@@ -2,10 +2,22 @@ import java.util.Objects;
 
 public class UndirectedUnweightedEndpointPair<V> implements UnweightedEndpointPair<V> {
 
+    /**
+     * The origin vertex of the undirected unweighted endpoint pair.
+     */
     private final V origin;
 
+    /**
+     * The destination vertex of the undirected unweighted endpoint pair.
+     */
     private final V destination;
 
+    /**
+     * Constructs a new undirected unweighted endpoint pair using an origin vertex and a destination vertex.
+     *
+     * @param origin      the origin vertex of the undirected unweighted endpoint pair
+     * @param destination the destination vertex of the undirected unweighted endpoint pair
+     */
     public UndirectedUnweightedEndpointPair(V origin, V destination) {
         this.origin = origin;
         this.destination = destination;
