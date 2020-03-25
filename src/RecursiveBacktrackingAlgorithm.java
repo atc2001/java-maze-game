@@ -1,5 +1,9 @@
 import java.util.*;
 
+/**
+ * This code generates a maze using Recursive Backtracking algorithm.
+ */
+
 public class RecursiveBacktrackingAlgorithm<V> implements Algorithm<V> {
 
     private final Graph<V> graph;

@@ -3,6 +3,12 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    /**
+     * Loads the main-menu FXML file upon launch.
+     *
+     * @main launches the application.
+     */
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         ServiceLocator.navigationService = new NavigationService(primaryStage);

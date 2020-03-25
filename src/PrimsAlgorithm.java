@@ -4,6 +4,10 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+/**
+ * This code generates a maze using Prim's algorithm.
+ */
+
 public class PrimsAlgorithm<V> implements Algorithm<V> {
 
     private final Graph<V> graph;

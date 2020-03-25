@@ -7,10 +7,19 @@ import java.io.IOException;
 
 public class MainMenuController {
 
+    /**
+     * @onClickExitButton
+     * Exits the application.
+     */
 
     public void onClickExitButton(ActionEvent actionEvent) {
         System.exit(0);
     }
+
+    /**
+     * @onClickSettingsButton
+     * Navigates to the settings page.
+     */
 
     public void onClickSettingsButton(ActionEvent actionEvent) {
 
@@ -22,6 +31,11 @@ public class MainMenuController {
         }
 
     }
+
+    /**
+     * @onClickPlayButton
+     * Opens the maze generation page.
+     */
 
     public void onClickPlayButton(ActionEvent actionEvent) {
 

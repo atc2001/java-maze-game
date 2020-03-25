@@ -10,6 +10,9 @@ import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.io.IOException;
+/**
+ * Controls the menus and buttons within the menu page.
+ */
 
 public class SettingsController {
     public ComboBox<String> themeComboBox;

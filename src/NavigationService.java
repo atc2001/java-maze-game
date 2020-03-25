@@ -13,6 +13,10 @@ public class NavigationService {
         return stage;
     }
 
+    /**
+     * This opens the generated maze in a new maximised window.
+     */
+
     public NavigationService(Stage stage) {
         this.stage = stage;
     }
