@@ -17,7 +17,5 @@ public class IntroController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 }
